@@ -17,7 +17,7 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-# Create dotfiles
+# Create dotfiles in home directory.
 for entry in `find $dotfiles_loc/config/ -type f -name '\.*'`; do
 	base=`basename $entry`
 	if [ -z "$base" ]; then
