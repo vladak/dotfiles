@@ -8,3 +8,6 @@ alias week="date +%V"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# OpenStreetMap
+alias josm='javaws -Xmx2048m http://josm.openstreetmap.de/download/josm.jnlp'
