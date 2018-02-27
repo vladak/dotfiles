@@ -1,3 +1,12 @@
+" indenting and formatting
+set autoindent
+set wrap
+set textwidth=80
+
+" display settings
+set ruler
+syntax on
+
 " Open new split panes to right and bottom, which feels more natural
 " than Vim default:
 set splitbelow
