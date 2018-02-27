@@ -14,8 +14,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export EDITOR=vim
-
 for file in `find ~/dotfiles/source/ -type f`; do
 	source $file
 done
