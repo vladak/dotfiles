@@ -1,0 +1,26 @@
+[user]
+	mail = vlada@devnull.cz
+	email = vlada@devnull.cz
+	name = Vladimir Kotal
+[core]
+        pager = cat
+[alias]
+        glog = log --graph --full-history
+        gloga = log --graph --full-history --all
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	# ala 'hg out -v'
+	outv = !git fetch && git log --name-only origin/master..
+	pl = pull --rebase
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+	ui = true
+
+[push]
+	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
