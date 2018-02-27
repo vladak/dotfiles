@@ -1,6 +1,16 @@
 # Git prompt (git-prompt.sh is shipped with Git)
+got_git_prompt=0
 if [ -r /usr/local/git/contrib/completion/git-prompt.sh ]; then
+	# macOS
 	. /usr/local/git/contrib/completion/git-prompt.sh
+	got_git_prompt=1
+elif [ -r /etc/bash_completion.d/git-prompt ]; then
+	# Ubuntu
+	. /etc/bash_completion.d/git-prompt
+	got_git_prompt=1
+fi
+
+if [ $got_git_prompt -eq 1 ]; then
 	GIT_PS1_SHOWDIRTYSTATE=true
 	GIT_PS1_SHOWCOLORHINTS=true
 	GIT_PS1_UNTRACKEDFILES=true
@@ -35,9 +45,17 @@ alias gpom='git push origin master'
 
 # Git completion
 # from https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-if [ -f ~/bashscripts/git-completion.bash ]; then
-  . ~/bashscripts/git-completion.bash
-  
+got_git_completion=0
+if [ -r ~/bashscripts/git-completion.bash ]; then
+	# home macOS
+	. ~/bashscripts/git-completion.bash
+	got_git_completion=1
+elif [ -r /usr/share/bash-completion/completions/git ]; then
+	. /usr/share/bash-completion/completions/git
+	got_git_completion=1
+fi
+
+if [ $got_git_completion -eq 1 ]; then 
   # Add git completion to the aliases: you must manually match each of your
   # aliases to the respective function for the git command defined in
   # git-completion.bash.
