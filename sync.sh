@@ -24,10 +24,13 @@ for entry in `find $dotfiles_loc/config/ -maxdepth 1 -name '\.*'`; do
 		continue
 	fi
 
-	if [ ! -h ~/$base ]; then
-		mv -f ~/$base ~/$base.orig
+	dst=~/$base
+
+	if [ ! -h $dst -a \( -f $dst -o -d $dst \) ]; then
+		rm -rf ~/"$base.orig"
+		mv -f $dst ~/$base.orig
 	fi
-	if [ ! -h ~/$base ]; then
+	if [ ! -h $dst ]; then
 		ln -sv "$entry" ~
 	fi
 done
