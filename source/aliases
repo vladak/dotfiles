@@ -1,3 +1,5 @@
+alias paths='echo -e ${PATH//:/\\n}'
+
 alias week="date +%V"
 
 # some more ls aliases
