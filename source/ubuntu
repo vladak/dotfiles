@@ -1,0 +1,15 @@
+# This file contains Ubuntu specific settings.
+
+function is_ubuntu {
+	lsb_release -ds 2>/dev/null | grep Ubuntu >/dev/null
+}
+
+if ! is_ubuntu; then
+	return
+fi
+
+if [ -d /usr/lib/jvm/java-8-oracle ]; then
+	export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+fi
+
+export LANG=cs_CZ.ISO-8859-2
