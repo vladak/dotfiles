@@ -1,0 +1,27 @@
+# macOS specific file
+
+function ismacOS {
+	[ `uname -s` == "Darwin" ]
+}
+
+if ! ismacOS; then
+	return
+fi
+
+# TeX Live
+if [ -d /usr/local/texlive/2012/bin/x86_64-darwin ]; then
+	PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-darwin
+fi
+
+# HomeBrew
+if [ -d /usr/local/bin ]; then
+	PATH=$PATH:/usr/local/bin
+fi
+if [ -d /usr/local/sbin ]; then
+	PATH=$PATH:/usr/local/sbin
+fi
+
+export PATH
+
+# Go
+export GOPATH=$HOME/go
