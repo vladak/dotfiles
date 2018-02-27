@@ -26,5 +26,7 @@ for entry in `find $dotfiles_loc/config/ -type f -name '\.*'`; do
 	if [ -f ~/$base -a ! -h ~/$base ]; then
 		mv -f ~/$base ~/$base.orig
 	fi
-	ln -s "$entry" ~/"$base"
+	if [ ! -h ~/$base ]; then
+		ln -sv "$entry" ~
+	fi
 done
