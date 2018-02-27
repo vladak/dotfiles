@@ -1,3 +1,7 @@
+# Commands that are too complex for an alias (and perhaps too small for
+# a stand-alone script) can be defined in a function. Functions can take
+# arguments, making them more powerful.
+
 # Create a new directory and enter it
 function mk() {
 	mkdir -p "$@" && cd "$@"
