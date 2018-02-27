@@ -18,12 +18,13 @@ if [ $? -ne 0 ]; then
 fi
 
 # Create dotfiles in home directory.
-for entry in `find $dotfiles_loc/config/ -maxdepth 1 -type f -name '\.*'`; do
+for entry in `find $dotfiles_loc/config/ -maxdepth 1 -name '\.*'`; do
 	base=`basename $entry`
 	if [ -z "$base" ]; then
 		continue
 	fi
-	if [ -f ~/$base -a ! -h ~/$base ]; then
+
+	if [ ! -h ~/$base ]; then
 		mv -f ~/$base ~/$base.orig
 	fi
 	if [ ! -h ~/$base ]; then
