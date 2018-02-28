@@ -18,6 +18,6 @@ for file in `find ~/dotfiles/source/ -type f`; do
 	source $file
 done
 
-if [ -r ~/proxy ]; then
-	source ~/proxy
+if [ -r ~/.bashrc_local ]; then
+	source ~/.bashrc_local
 fi
