@@ -32,3 +32,8 @@ if version >= 604
 endif
 
 source ~/.vim/bad-whitespace.vim
+
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
