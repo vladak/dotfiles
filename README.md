@@ -10,3 +10,5 @@ This exists primarily for the configuration of:
   - `bash`
   - `vim`
   - `git`
+
+Most of the configuration can be adjusted using local files (e.g. `~/.vimrc_local` or `~/.bashrc_local`).
