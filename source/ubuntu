@@ -11,7 +11,3 @@ fi
 if [ -d /usr/lib/jvm/java-8-oracle ]; then
 	export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 fi
-
-# This is specific to my laptop and is probably not needed anymore
-# except ls(1) complains when LANG is not set.
-export LANG=cs_CZ.ISO-8859-2
