@@ -1,0 +1,22 @@
+# the following two lines give a two-line status, with the current window highlighted
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+
+# switch windows with F3 (prev) and F4 (next)
+bindkey "^[OR" prev
+bindkey "^[OS" next
+
+# automatically detach the session if the terminal is closed
+autodetach on
+
+# larger command history
+defscrollback 10000
+
+# disable the startup message
+startup_message off
+
+# allow to scroll
+termcapinfo xterm* ti@:te@
+
+# disable the annoying visual bell
+vbell off
