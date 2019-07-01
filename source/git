@@ -40,6 +40,7 @@ alias gcommam='git add -A && git commit -m'
 alias gcomma='git add -A && git commit'
 alias gcommend='git add -A && git commit --amend --no-edit'
 alias gm='git merge'
+alias gpoh='git push'
 alias gpoh='git push origin HEAD'
 alias gpom='git push origin master'
 
