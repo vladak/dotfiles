@@ -20,3 +20,7 @@ termcapinfo xterm* ti@:te@
 
 # disable the annoying visual bell
 vbell off
+
+# change Ctrl-a to Ctrl-x to avoid accidentally detaching the screen
+# via Ctrl-a + d
+escape ^xx
