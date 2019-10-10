@@ -24,3 +24,21 @@ vbell off
 # change Ctrl-a to Ctrl-x to avoid accidentally detaching the screen
 # via Ctrl-a + d
 escape ^xx
+
+# I often have more than 10 windows running and wanted a way to select them.
+# configure C-x Shift+0 through 9 to select windows 10 through 19.
+bind  ! select 11
+bind  @ select 12
+bind \# select 13
+bind  $ select 14
+bind  % select 15
+bind \^ select 16
+bind  & select 17
+bind  * select 18
+bind  ( select 19
+bind  ) select 10
+
+# Sick of full-screen programs like vim remaining in the scrollback buffer after
+# you've closed them? Wouldn't it be great if they'd go away completely just
+# like they do when you're not running screen?
+altscreen on
