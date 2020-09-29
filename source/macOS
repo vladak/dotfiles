@@ -25,3 +25,5 @@ export PATH
 
 # Go
 export GOPATH=$HOME/go
+
+alias gmake='gnumake'
