@@ -44,19 +44,17 @@ alias gpoh='git push'
 alias gpoh='git push origin HEAD'
 alias gpom='git push origin master'
 
-# Git completion
-# from https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+# Git completion for bash
 got_git_completion=0
-if [ -r ~/bashscripts/git-completion.bash ]; then
-	# home macOS
-	. ~/bashscripts/git-completion.bash
+if [ -r /usr/local/git/contrib/completion/git-completion.bash ]; then
+	.  /usr/local/git/contrib/completion/git-completion.bash
 	got_git_completion=1
 elif [ -r /usr/share/bash-completion/completions/git ]; then
 	. /usr/share/bash-completion/completions/git
 	got_git_completion=1
 fi
 
-if [ $got_git_completion -eq 1 ]; then 
+if [ $got_git_completion -eq 1 ]; then
 	# Add git completion to the aliases: you must manually match each of
 	# your aliases to the respective function for the git command defined
 	# in git-completion.bash.
