@@ -21,4 +21,3 @@ done
 if [ -r ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
-. "$HOME/.cargo/env"
