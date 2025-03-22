@@ -4,6 +4,10 @@ if [ -r /usr/local/git/contrib/completion/git-prompt.sh ]; then
 	# macOS
 	. /usr/local/git/contrib/completion/git-prompt.sh
 	got_git_prompt=1
+elif [ -r /opt/homebrew/etc/bash_completion.d/git-prompt.sh ]; then
+	# newer Homebrew
+	. /opt/homebrew/etc/bash_completion.d/git-prompt.sh
+	got_git_prompt=1
 elif [ -r /etc/bash_completion.d/git-prompt ]; then
 	# Ubuntu
 	. /etc/bash_completion.d/git-prompt
@@ -48,6 +52,9 @@ alias gpom='git push origin master'
 got_git_completion=0
 if [ -r /usr/local/git/contrib/completion/git-completion.bash ]; then
 	.  /usr/local/git/contrib/completion/git-completion.bash
+	got_git_completion=1
+elif [ -r /opt/homebrew/etc/bash_completion.d/git-completion.bash ]; then
+	.  /opt/homebrew/etc/bash_completion.d/git-completion.bash
 	got_git_completion=1
 elif [ -r /usr/share/bash-completion/completions/git ]; then
 	. /usr/share/bash-completion/completions/git
