@@ -15,8 +15,17 @@ fi
 if [ -d /usr/local/sbin ]; then
 	PATH=$PATH:/usr/local/sbin
 fi
+if [[ -f /opt/homebrew/bin/brew ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 export PATH
+
+#
+# Silence the zfs on macOS which by prints the 'The default interactive shell is now zsh.' message
+# if it detects shell other than zfs.
+#
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Go
 export GOPATH=$HOME/go
