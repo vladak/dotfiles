@@ -5,4 +5,3 @@
 # In general, using the same config for both login and non-login shells
 # is desirable.
 [ -r ~/.bashrc ] && source ~/.bashrc
-. "$HOME/.cargo/env"
