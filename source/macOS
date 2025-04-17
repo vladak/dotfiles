@@ -32,8 +32,9 @@ export GOPATH=$HOME/go
 
 alias gmake='gnumake'
 
-# Java 17. Currently needed for OpenGrok (https://github.com/oracle/opengrok/issues/4459)
-if [[ -d /opt/homebrew/opt/openjdk@17 ]]; then
-	export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-	export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+# Java
+JDK_HOMEBREW=/opt/homebrew/opt/openjdk@21
+if [[ -d $JDK_HOMEBREW ]]; then
+	export PATH="$JDK_HOMEBREW/bin:$PATH"
+	export JAVA_HOME="$JDK_HOMEBREW"
 fi
